@@ -1,0 +1,72 @@
+.swiperContainer {
+  width: 100%;
+  margin-block: 20px;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente o Swiper */
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  /*No início 0%: o elemento está totalmente transparente*/
+  0% {
+    opacity: 0;
+  }
+  /*No fim 100%: o elemento está totalmente visível*/
+  100% {
+    opacity: 1;
+  }
+}
+
+.mySwiper {
+  width: 100%;
+  max-width: 1200px; /* Limita a largura para centralizar melhor */
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.mySwiper img {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center; /* CENTRALIZA a imagem dentro do slide */
+  display: block;
+}
+
+.banner_principal{
+   position: relative; /* necessário para o h2 ficar posicionado em relação a este container */
+   width: 100%;
+}
+
+.banner_principal h2 {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color:#54198b;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 10;
+  font-family: "Satisfy", cursive !important;
+  font-size: 3.5rem;
+  width: 40%;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .banner_principal h2 {
+    font-size: 2.5rem;
+  }  
+}
+
+@media (max-width: 480px) {
+   .banner_principal h2 {
+    font-size: 2rem;
+     width: 50%;
+  }
+}
+
+

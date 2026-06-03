@@ -1,0 +1,110 @@
+.footer {
+  background-color:#c9a0f5;
+  color: #000000;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem 4.5rem;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.info_texto{
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  align-items: start;
+  padding: 1rem;
+}
+
+.nome {
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 0 0 6px #000000;
+  font-size: 20px;
+  text-align: center;
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.email{
+  color: rgb(0, 0, 0, 0.75);
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.email:hover{
+  text-shadow: 0 0 6px #000000;
+  color: #000000;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-self: center;
+}
+
+.links a {
+  color: #000000;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.links a:hover {
+  transform: scale(1.2);
+  color: #000000;
+}
+
+ .textofooter{
+  font-size: 18px;
+  text-align: start;
+ }
+
+/* Responsivo */
+@media (max-width: 868px) {
+  .info {
+  justify-content: center;
+}
+
+.info_texto{
+  justify-content: center;
+  align-items: center;
+}
+
+.textofooter{
+  text-align: center;
+ }
+}
+
+@media(max-width: 480px){
+.textofooter,
+.email{
+  font-size: 16px;
+ }
+
+ .nome{
+  font-size: 18px;
+ }
+
+ .footer{
+  padding: 1rem 2rem;
+ } 
+}

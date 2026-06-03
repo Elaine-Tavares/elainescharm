@@ -1,0 +1,201 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem 4rem 2rem;
+  min-height: 320px;
+}
+
+.container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.carrinho_vazio{
+    text-align: center;
+}
+
+.listaProdutos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.item div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+.item p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.frete {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-top: 2px dashed #ddd;
+}
+
+.frete h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.frete input {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  width: 180px;
+  margin-right: 1rem;
+  font-size: 0.95rem;
+}
+
+.frete button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #e6007e;
+  opacity: 0.8;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.frete button:hover {
+  opacity: 1;
+}
+
+.valorFrete {
+  margin-top: 0.6rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.erro {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.total {
+  border-top: 2px solid #ddd;
+  padding-top: 1rem;
+  text-align: right;
+}
+
+.total p {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+  color: #333;
+}
+
+.total strong {
+  color: #000;
+}
+
+.btn_comprar{
+  background-color: green;
+  opacity: 0.8;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-size: 14px;
+}
+
+.btn_comprar:hover{
+  opacity: 1;
+  
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .frete input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .frete button {
+    width: 100%;
+  }
+
+  .total {
+    text-align: center;
+  }
+}
+
+
+.quantidade {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.quantidade button {
+  background-color: #e6007e;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.quantidade button:hover {
+  background-color: #c50066;
+}
+
+.quantidade span {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}

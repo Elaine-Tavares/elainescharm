@@ -1,0 +1,42 @@
+.search_bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a9d7f5;
+    padding-block: 10px;
+    gap: 5px;
+    
+}
+
+.input_container{
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 350px;
+}
+
+.search_bar input{
+    padding: 10px 0px 10px 5px;
+    width: 90%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.container_lupa{
+    width: 50px;
+    height: auto;
+    padding: 8.5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.lupa{
+    font-size: 25px;
+    color: gray;
+}

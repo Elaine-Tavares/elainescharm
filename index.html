@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+     <!-- Ícone do site -->
+    <link rel="icon" type="image/svg+xml" href="./logo.webp" />
+
+     <!-- Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título da página -->
+    <title>Ecommerce - Elaine's Charm</title>
+
+     <!-- Meta descrição (aparece nos resultados do Google) -->
+    <meta name="description" content="Descubra os cosméticos da Elaine’s Charm: maquiagem, cuidados com a pele e beleza com qualidade e preço acessível. Frete grátis para todo o Brasil!">
+
+    <!-- Palavras-chave relevantes -->
+    <meta name="keywords" content="cosméticos, maquiagem, cuidados com a pele, beleza, batom, hidratante, skincare, loja de cosméticos, Elaine's Charm, cosméticos online">
+
+    <!-- Autor -->
+    <meta name="author" content="Elaine Tavares" />
+
+     <!-- Open Graph (compartilhamento em redes sociais) -->
+    <meta property="og:title" content="Elaine’s Charm | Cosméticos e Beleza Online" />
+    <meta property="og:description" content="Cosméticos incríveis para realçar sua beleza! Maquiagem, skincare e muito mais com frete grátis em todo o Brasil. Confira agora na Elaine’s Charm." />
+    <meta property="og:image" content="./logo.webp" />
+    <meta property="og:url" content="https://ecommerce-react-php-theta.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- SEO técnico -->
+     <!--Serve para indicar ao Google e outros buscadores qual é a URL oficial (canônica) da página — ou seja, a versão principal que deve ser indexada.-->
+    <link rel="canonical" href="https://ecommerce-react-php-theta.vercel.app/" />
+
+    <!--Evita que o carregamento do CSS bloqueie o carregamento e a renderização da página.-->
+    <link
+      rel="preload"
+      href="./index.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <!--Alguns navegadores antigos não suportam rel="preload". Para garantir que o CSS seja aplicado nesses casos, você pode usar um pequeno fallback dentro de <noscript>, que serve para navegadores com JS desabilitado ou que não suportam preload:-->
+    <noscript>
+      <link rel="stylesheet" href="./index.css" />
+    </noscript>
+
+    <!--diz ao navegador para iniciar a conexão antecipadamente com o servidor especificado — nesse caso, os servidores do Google Fonts. Isso reduz a latência e acelera o carregamento da fonte.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--necessário para conexões com servidores de terceiros (como fonts.gstatic.com), permitindo que os recursos carreguem corretamente e com caching compartilhado-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Satisfy&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Satisfy&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Satisfy&display=swap" rel="stylesheet">
+    </noscript>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx" defer></script>
+  </body>
+</html>

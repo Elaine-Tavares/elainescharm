@@ -1,0 +1,57 @@
+/* src/components/Checkout/ComprarForm.module.css */
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.form select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.cardElementWrapper {
+  margin: 20px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 16px;
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+}

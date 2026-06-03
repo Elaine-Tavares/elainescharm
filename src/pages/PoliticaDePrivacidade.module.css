@@ -1,0 +1,37 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container h1 {
+  font-size: 2rem;
+  color: #b872d8;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.container p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.container h2 {
+  font-size: 1.3rem;
+  color: #6a1b9a;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.container a {
+  color: #b872d8;
+  text-decoration: underline;
+  transition: 0.3s ease;
+}
+
+.container a:hover {
+  color: #8e44ad;
+}
