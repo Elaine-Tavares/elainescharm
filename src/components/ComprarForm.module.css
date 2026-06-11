@@ -1,57 +1,77 @@
-/* src/components/Checkout/ComprarForm.module.css */
-
 .form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-.form h3 {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.form select {
-  width: 100%;
-  padding: 8px 12px;
-  font-size: 1rem;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.cardElementWrapper {
-  margin: 20px 0;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fafafa;
-}
-
-.form button {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  background-color: #4caf50;
+.submitBtn {
+  background-color: #cc0066;
   color: white;
+  padding: 1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(204, 0, 102, 0.2);
 }
 
-.button:disabled {
-  background-color: #a5d6a7;
+.submitBtn:hover:not(:disabled) {
+  background-color: #a30052;
+  transform: translateY(-2px);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  background-color: #e0e0e0;
+  color: #999;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .message {
-  margin-top: 16px;
-  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
   text-align: center;
-  color: #333;
+}
+
+.error {
+  background-color: #fff0f0;
+  color: #df1b41;
+  border: 1px solid #ffcccc;
+}
+
+.success {
+  background-color: #f0fff4;
+  color: #2f855a;
+  border: 1px solid #c6f6d5;
+}
+
+.processing {
+  color: #666;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.processing::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ccc;
+  border-top-color: #cc0066;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }

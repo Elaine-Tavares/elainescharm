@@ -15,6 +15,30 @@ export default function Produtos() {
     const [imgs, setImgs] = useState([])
     const [valorDoUsuario, setValorDoUsuario] = useState('')
     const [carregando, setCarregando] = useState(false)
+    const [produtos, setProdutos] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    async function getProducts(){
+      setLoading(true)
+      try {
+        const response = await api.get("produtos.php")
+         if (response.status) {
+        //exibe a mensagem de sucesso
+        setProdutos(response.data.dados)
+        console.log("RESPOSTA", response.data)
+        }
+      } catch (error) {
+        console.log("ERROR", error)
+      } finally{
+        setLoading(false)
+      }
+    }
+
+    useEffect(() => {
+      getProducts()
+    
+    }, [])
+    
 
     
     
@@ -32,15 +56,30 @@ export default function Produtos() {
           inputDoUsuario={valorDoUsuario}
           setInputDoUsuario={(e) => setValorDoUsuario(e.target.value)}   
         />
-        {carregando && <div className='loader'></div>}
+        {loading && <div className='loader'></div>}
 
         <h1 className={styles.titulo}>Nossos Produtos</h1>
-         {valorDoUsuario && produtosFiltrados.length === 0 && (
+         {/* {valorDoUsuario && produtosFiltrados.length === 0 && (
             <p className={styles.semResultados}>Nenhum produto encontrado com esse nome 😢</p>
-        )}
+        )} */}
         <div className={styles.produtosContainer}> 
-          
+          {produtos.map((produto) => (
+
+        <div key={produto.id_do_produto} className={styles.cardProduto}>
+          <h2>Produto: {produto.nome_do_produto}</h2>
+          <p className={styles.preco}>Preço:  R$ {Number(produto.valor_do_produto).toFixed(2)}</p> 
+          <img src={`http://localhost:8000/images/${produto.imagem_do_produto}`} 
+                alt={produto.nome_do_produto}
+                loading="lazy"
+                width="300"
+                height="300"
+               />
+               <Link  to={`/produto_detalhes/${produto.id_do_produto}`} className={styles.cardLink}> <button className={styles.botaoVer}>Ver Produto</button></Link>
+        </div>
+       ))}
        </div>
+
+       
       </Container>
 )
 }

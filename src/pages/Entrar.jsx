@@ -18,11 +18,13 @@ export default function Entrar() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [mensagemErr, setMensagemErr] = useState('');
+  const [processando, setProcessando] = useState("")
 
 
 
   const handleLogar = async (e) => {
     e.preventDefault();
+    setProcessando("Processando...")
     // Leva a janela ao topo do formulário
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -36,12 +38,15 @@ export default function Entrar() {
       // Verifica se o login foi bem-sucedido com base na resposta da API
       if (response.data.success) {
          // ✅ Aqui salvamos no localStorage
-        localStorage.setItem('usuarioLogado', 'true')
-        // console.log(localStorage)    
-        console.log('Após login:', localStorage.getItem('usuarioLogado')) // Deve dar null
- 
+        const usuario = {
+          logado: true,
+          email: email,
+        };
+
+        localStorage.setItem('usuario_logado', JSON.stringify(usuario));
+  
         // Navega para a página inicial ou qualquer outra página após login bem-sucedido
-        navigate('/'); // Substitua '/home' pela rota para a página de destino após login.
+        navigate('/minhaConta'); // Substitua '/home' pela rota para a página de destino após login.
       } else {
         // Leva a janela ao topo do formulário
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -61,6 +66,8 @@ export default function Entrar() {
       setTimeout(() => {
       setMensagemErr("") 
       }, 3000);
+    } finally{
+      setProcessando("")
     }
   }
  
@@ -79,6 +86,7 @@ export default function Entrar() {
       </div>
       <div className={styles.form_entrar_conta}> 
         <h2>Preencha os dados para logar</h2>  
+        {processando && <p className={styles.processando}>{processando}</p>}
         {mensagemErr && <p className={styles.mensagemErr}>{mensagemErr}</p> }
         <form onSubmit={handleLogar}>
          <div className={styles.div_form}>

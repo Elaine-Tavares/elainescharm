@@ -61,7 +61,7 @@
   margin-bottom: 1rem;
 }
 
-.botaoComprar {
+.botaoVer {
   background-color: #e91e63;
   color: white;
   padding: 0.6rem 1.2rem;
@@ -70,9 +70,10 @@
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
-.botaoComprar:hover {
+.botaoVer:hover {
   background-color: #c2185b;
 }
 

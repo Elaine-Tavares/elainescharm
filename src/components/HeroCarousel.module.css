@@ -26,8 +26,8 @@
 }
 
 .mySwiper img {
-  width: 80%;
-  height: 80%;
+  width: 95%;
+  height: 95%;
   margin: 0 auto;
   object-fit: cover;
   object-position: center; /* CENTRALIZA a imagem dentro do slide */

@@ -16,7 +16,7 @@ export default function HeroCarousel() {
 
   async function carregarCarousel(){
     try {
-      const response = await api.get('produtos.php')
+      const response = await api.get('carroussel.php')
       // sucesso 
       if (response.status) {
         //exibe a mensagem de sucesso
@@ -59,8 +59,8 @@ export default function HeroCarousel() {
         </SwiperSlide> 
         {imgs.map((img) => 
         <SwiperSlide 
-          key={img.id_do_produto}>
-          <img src={`http://localhost:8000/images/${img.imagem_do_produto}`} 
+          key={img.id}>
+          <img src={`http://localhost:8000/images/${img.imagem}`} 
           alt="Banner" 
         />
         </SwiperSlide>  

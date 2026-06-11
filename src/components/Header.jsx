@@ -31,15 +31,14 @@ export default function Header() {
     //Detectar o estado inicial, se logado == false ou logado == true
     useEffect(() => {
       // Atualiza o estado se usuário estiver logado
-      const usuarioLogado = localStorage.getItem('usuarioLogado') === 'true'
-      setLogado(usuarioLogado)
-      console.log(usuarioLogado)
+      const usuario = JSON.parse(localStorage.getItem('usuario_logado'))
+      setLogado(usuario)
   }, [])
 
     const handleLogout = () => {
-      localStorage.removeItem('usuarioLogado')
+      localStorage.removeItem('usuario_logado')
       setLogado(false)
-      console.log('Após logout:', localStorage.getItem('usuarioLogado')) // Deve dar null
+      console.log('Após logout:', localStorage.getItem('usuario_logado')) // Deve dar null
       navigate('/')   
 }
 

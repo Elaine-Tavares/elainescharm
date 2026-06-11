@@ -14,7 +14,6 @@ export default function CriarConta() {
     4 - Por fim: o retorno do JSX*/
     const [email, setEmail] = useState('')
     const [nome, setNome] = useState('')
-    const [telefone, setTelefone] = useState('')
     const [senha, setSenha] = useState('')
     const [repeteSenha, setRepeteSenha] = useState('')
     const [mensagem, setMensagem] = useState('')
@@ -35,12 +34,11 @@ export default function CriarConta() {
       const response = await api.post('dimitri_criar_conta.php', {
         email,
         nome,
-        telefone,
         senha,
         repeteSenha,
         aceitouTermos
       })
-       console.log("Acontece algo 2")
+       console.log("Acontece algo 2, RESPONSE", response)
       // sucesso 
       if (response.data.success) {
         //exibe a mensagem de sucesso
@@ -51,7 +49,6 @@ export default function CriarConta() {
         //limpa os campos
         setEmail('')
         setNome('')
-        setTelefone('')
         setSenha('')
         setRepeteSenha('') 
         setAceitouTermos(false)
@@ -120,14 +117,6 @@ export default function CriarConta() {
           type="text" 
           placeholder='Ele será mostrado às pessoas que interagem com você.'
           value={nome} onChange={e => setNome(e.target.value)}
-         />
-        </div>
-        <div className={styles.div_form}>
-         <label>Adicione seu telefone</label>
-         <input 
-          type="tel" 
-          placeholder='Ex: (11) 91234-5678 ou 11912345678' 
-          value={telefone} onChange={e => setTelefone(e.target.value)}
          />
         </div>
         <div className={styles.div_form}>

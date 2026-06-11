@@ -50,9 +50,7 @@ export default function ProdutoDetalhes() {
     produtoDetalhes() 
   }, [id])
 
-  // Se ainda não carregou o produto, exibe uma mensagem temporária
-  if (!produto) return <p>Carregando produto...</p>
-  
+
 
   function addProdutoCarrinho(novoProduto) {
   console.log("NOVO PRODUTO:", novoProduto)
@@ -108,16 +106,16 @@ export default function ProdutoDetalhes() {
         <meta property="og:url" content={`https://www.elainescharm.com/produto/${produto.id}`} />
         <meta name="robots" content="index, follow" />
       </Helmet> */}
-      {loading}
+      {loading && <div className='loader'></div>}
       <div className={styles.container}>
         <div className={styles.imagens}>
-          {/* <img src={`${imageBaseURL}${produto.imagem_do_produto}`} alt={produto.imagem_do_produto} className={styles.imagemPrincipal} /> */}
+          {<img src={`http://localhost:8000/images/${produto.imagem_do_produto}`} alt={produto.nome_do_produto} className={styles.imagemPrincipal} />}
           {/* Se tiver mais imagens, renderize miniaturas aqui */}
         </div>
         <div className={styles.info}>
           <h1>{produto.nome_do_produto}</h1>
           <h4>{produto.descricao_do_produto}</h4>
-          <span className={styles.valor_do_produto}>R$ {produto.valor_do_produto}</span> ou
+          <span className={styles.valor_do_produto}>R$ {Number(produto.valor_do_produto).toFixed(2)}</span> ou
           <span className={styles.valor_do_produto}>R$ {produto.parcelamento_do_produto}</span>
           <div className={styles.container_buttons}>
              <button onClick={()=>addProdutoCarrinho(produto)} className={styles.botaoAddCarrinho}>Adicionar ao Carrinho</button>

@@ -34,7 +34,7 @@ const adicionar = (id) => {
   setProdutos(atualizado)
 }
 
-//incrementar produto
+//remover produto
 const remover = (id) => {
   const atualizado = produtos
     .map((p) =>
@@ -56,12 +56,7 @@ const calcularSubtotal = () => {
   )
 }
 
-//calcular total
-const calcularTotal = () => {
-  const subtotal = calcularSubtotal()
-  return frete ? (subtotal + frete).toFixed(2) : subtotal.toFixed(2)
-}
-  
+
   const calcularFrete = async () => {
     if (cep.length !== 8) {
       setErroCep('Digite um CEP válido com 8 números.')
@@ -85,18 +80,28 @@ const calcularTotal = () => {
       setLocalidade(data.localidade)
       setLogradouro(data.logradouro)
       let valorFrete = 0
-      if (data.uf === 'SP') valorFrete = 10.90
-      else if (data.uf === 'RJ') valorFrete = 14.50
+      if (data.uf === 'RJ') valorFrete = 10.90
+      else if (data.uf === 'SP') valorFrete = 14.50
       else valorFrete = 19.99
 
       setFrete(valorFrete)
+      
+      // salva o frete separado
+      localStorage.setItem('frete', JSON.stringify(valorFrete))
+
     } catch (err) {
       setErroCep('Erro ao consultar o CEP.', err)
       setFrete(null)
     }
   }
 
- 
+
+//calcular total
+const calcularTotal = () => {
+  const subtotal = calcularSubtotal()
+  return frete ? (subtotal + frete).toFixed(2) : subtotal.toFixed(2)
+}
+  
 
   return (
     <Container>
